@@ -22,6 +22,7 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
 - Properly set up Ingress objects with security control
   - https://kubernetes.io/docs/concepts/services-networking/ingress/#tls
   - https://kubernetes.github.io/ingress-nginx/user-guide/tls/
+  - https://github.com/kubernetes/ingress-nginx/blob/master/docs/user-guide/tls.md
 - Protect node metadata and endpoints
   - https://cloud.google.com/kubernetes-engine/docs/how-to/protecting-cluster-metadata
   - https://cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster
