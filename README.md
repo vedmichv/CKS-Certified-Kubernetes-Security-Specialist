@@ -14,8 +14,11 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
 - Use Network security policies to restrict cluster level access
   - https://kubernetes.io/docs/concepts/services-networking/network-policies/
   - https://kubernetes.io/docs/tasks/administer-cluster/securing-a-cluster/#restricting-network-access
+  - https://kubernetes.io/docs/tasks/administer-cluster/declare-network-policy/
+  - https://github.com/ahmetb/kubernetes-network-policy-recipes
 - Use CIS benchmark to review the security configuration of Kubernetes components (etcd, kubelet, kubedns, kubeapi)
   - CIS Benchmark Kubernetes
+  - Default GKE cluster results: https://cloud.google.com/kubernetes-engine/docs/concepts/cis-benchmarks#status
 - Properly set up Ingress objects with security control
   - https://kubernetes.io/docs/concepts/services-networking/ingress/#tls
   - https://kubernetes.github.io/ingress-nginx/user-guide/tls/
@@ -23,10 +26,13 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
   - https://cloud.google.com/kubernetes-engine/docs/how-to/protecting-cluster-metadata
   - https://cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster
   - https://kubernetes.io/docs/tasks/administer-cluster/securing-a-cluster/#restricting-cloud-metadata-api-access
-  - Falco check webinar??
+  - https://blog.cloud66.com/setting-up-secure-endpoints-in-kubernetes/
+  - Falco webinar (just a demo): [Intro to Falco: Intrusion Detection for Containers - Shane Lawrence, Shopify](https://youtu.be/rBqBrYESryY?list=PLj6h78yzYM2O1wlsM-Ma-RYhfT5LKq0XC&t=1033)
 - Minimize use of, and access to, GUI elements
   - https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/
+  - https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/README.md
   - https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md
+  - https://blog.heptio.com/on-securing-the-kubernetes-dashboard-16b09b1b7aca
 - Verify platform binaries before deploying
   - https://github.com/kubernetes/kubernetes/releases
   - sha256sum (https://help.ubuntu.com/community/HowToSHA256SUM)
@@ -35,11 +41,20 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
 
 - Restrict access to Kubernetes API
   - https://kubernetes.io/docs/reference/access-authn-authz/controlling-access/
+  - (mentioned, but gust a general precautions) https://cloud.google.com/anthos/gke/docs/on-prem/how-to/hardening-your-cluster
 - Use Role Based Access Controls to minimize exposure
   - https://kubernetes.io/docs/reference/access-authn-authz/rbac/
 - Exercise caution in using service accounts e.g. disable defaults, minimize permissions on newly created ones
   - https://kubernetes.io/docs/reference/access-authn-authz/service-accounts-admin/
   - https://kubernetes.io/docs/reference/access-authn-authz/rbac/#default-roles-and-role-bindings
+  - [Understand Role Based Access Control in Kubernetes](https://www.youtube.com/watch?v=G3R24JSlGjY)
+  - https://kubernetes.io/docs/reference/access-authn-authz/authorization/#authorization-modules
+  - https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/#use-the-default-service-account-to-access-the-api-server
+    - Other:
+    - Get SA token: https://docs.armory.io/docs/armory-admin/manual-service-account/
+    - https://thenewstack.io/a-practical-approach-to-understanding-kubernetes-authentication/ 
+    - https://thenewstack.io/kubernetes-access-control-exploring-service-accounts/ 
+    - https://www.cyberark.com/resources/threat-research-blog/securing-kubernetes-clusters-by-eliminating-risky-permissions
 - Update Kubernetes frequently
   - https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade/
 
@@ -47,11 +62,13 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
 
 - Minimize host OS footprint (reduce attack surface)
   - https://blog.sonatype.com/kubesecops-kubernetes-security-practices-you-should-follow#:~:text=Reduce%20Kubernetes%20Attack%20Surfaces
+  - (Host-Level firewall) https://help.replicated.com/community/t/managing-firewalls-with-ufw-on-kubernetes/230
 - Minimize IAM roles
 - Minimize external access to the network
   - firewall
 - Appropriately use kernel hardening tools such as AppArmor, seccomp
-  	
+  - https://kubernetes.io/docs/tutorials/clusters/apparmor/ 
+  - https://kubernetes.io/docs/tutorials/clusters/seccomp/	
 
 ## Minimize Microservice Vulnerabilities – 20%
 
