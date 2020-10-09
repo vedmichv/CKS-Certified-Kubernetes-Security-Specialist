@@ -9,34 +9,43 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
 - Linux Academy:  [Kubernetes Security (Advanced Concepts)](https://linuxacademy.com/cp/modules/view/id/354)
 - Linux Academy: [Kubernetes Security](https://linuxacademy.com/cp/modules/view/id/302)
 
+## General security-related docs
+
+- **GCP (GKE) General security guide** https://cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster
+
 ## Cluster Setup – 10%
 
 - Use Network security policies to restrict cluster level access
-  - https://kubernetes.io/docs/concepts/services-networking/network-policies/
-  - https://kubernetes.io/docs/tasks/administer-cluster/securing-a-cluster/#restricting-network-access
-  - https://kubernetes.io/docs/tasks/administer-cluster/declare-network-policy/
-  - https://github.com/ahmetb/kubernetes-network-policy-recipes
-  - <mark>Good NP description with examples: https://medium.com/@reuvenharrison/an-introduction-to-kubernetes-network-policies-for-security-people-ba92dd4c809d</mark>
-  - <mark>NP best practices: https://medium.com/@tufin/best-practices-for-kubernetes-network-policies-2b643c4b1aa</mark>
-  - <mark>Network Policy Visualizer https://orca.tufin.io/netpol/</mark>
-  - <mark>https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/#networkpolicy-v1-networking-k8s-io</mark>
-  - Notes:
+  - **Main doc:** https://kubernetes.io/docs/concepts/services-networking/network-policies/
+  - **Main task:** https://kubernetes.io/docs/tasks/administer-cluster/declare-network-policy/
+  - **General practice:** https://kubernetes.io/docs/tasks/administer-cluster/securing-a-cluster/#restricting-network-access
+  - **Official blog post:** https://kubernetes.io/blog/2017/10/enforcing-network-policies-in-kubernetes/
+  - **NetworkPolicy API object reference:** https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/#networkpolicy-v1-networking-k8s-io
+  - 3rd Party:
+    - _NP Examples:_ https://github.com/ahmetb/kubernetes-network-policy-recipes
+    - _Good NP description with examples:_ https://medium.com/@reuvenharrison/an-introduction-to-kubernetes-network-policies-for-security-people-ba92dd4c809d
+    - _NP best practices:_ https://medium.com/@tufin/best-practices-for-kubernetes-network-policies-2b643c4b1aa
+    - _[Playground] Network Policy Visualizer_ https://orca.tufin.io/netpol/
+  - **Notes**:
     > podSelector: This selects particular Pods in the **same namespace as the NetworkPolicy** which should be allowed as ingress sources or egress destinations.
 - Use CIS benchmark to review the security configuration of Kubernetes components (etcd, kubelet, kubedns, kubeapi)
-  - CIS Benchmark Kubernetes
-  - Default GKE cluster results: https://cloud.google.com/kubernetes-engine/docs/concepts/cis-benchmarks#status
+  - 3rd Party:
+    - _CIS Benchmark Kubernetes_
+    - _kubebench (CNCF)_ https://github.com/aquasecurity/kube-bench#running-kube-bench
+    - _Default GKE cluster results:_ https://cloud.google.com/kubernetes-engine/docs/concepts/cis-benchmarks#status
 - Properly set up Ingress objects with security control
-  - https://kubernetes.io/docs/concepts/services-networking/ingress/#tls
-  - https://kubernetes.github.io/ingress-nginx/user-guide/tls/
-  - https://github.com/kubernetes/ingress-nginx/blob/master/docs/user-guide/tls.md
+  - **Main doc (TLS):** https://github.com/kubernetes/ingress-nginx/blob/master/docs/user-guide/tls.md
+  - **Main Concept (ingress, TLS):** https://kubernetes.io/docs/concepts/services-networking/ingress/#tls
+  - **Main Concept (ingress controller, multiple controllers):** https://kubernetes.io/docs/concepts/services-networking/ingress-controllers/
+  - **Create TLS secret:** https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#-em-secret-tls-em-
 - Protect node metadata and endpoints
-  - https://cloud.google.com/kubernetes-engine/docs/how-to/protecting-cluster-metadata
-  - https://cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster
-  - https://kubernetes.io/docs/tasks/administer-cluster/securing-a-cluster/#restricting-cloud-metadata-api-access
-  - https://blog.cloud66.com/setting-up-secure-endpoints-in-kubernetes/
-  - <mark>[AWS] Protecting metadata - iptables rule: https://docs.aws.amazon.com/eks/latest/userguide/restrict-ec2-credential-access.html</mark>
-  - Falco webinar (just a demo): [Intro to Falco: Intrusion Detection for Containers - Shane Lawrence, Shopify](https://youtu.be/rBqBrYESryY?list=PLj6h78yzYM2O1wlsM-Ma-RYhfT5LKq0XC&t=1033)
-  - <mark>Notes:
+  - **General:** https://kubernetes.io/docs/tasks/administer-cluster/securing-a-cluster/#restricting-cloud-metadata-api-access
+  - 3rd Party:
+    - _[Practical] Protecting metadata - **iptables rule**:_ https://docs.aws.amazon.com/eks/latest/userguide/restrict-ec2-credential-access.html
+    - _GCP-specific metadata protection guide_ https://cloud.google.com/kubernetes-engine/docs/how-to/protecting-cluster-metadata
+    - _Setting up secure endpoints in Kubernetes (might be not related):_ https://blog.cloud66.com/setting-up-secure-endpoints-in-kubernetes/
+    - _Falco webinar (just a demo):_ [Intro to Falco: Intrusion Detection for Containers - Shane Lawrence, Shopify](https://youtu.be/rBqBrYESryY?list=PLj6h78yzYM2O1wlsM-Ma-RYhfT5LKq0XC&t=1033)
+  - **Notes:**
     > ```
     > egress:
     > - to:
@@ -45,38 +54,45 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
     >       except:
     >       - 169.254.169.254/32
     > ```
-    > </mark>
 - Minimize use of, and access to, GUI elements
-  - https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/
-  - https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/README.md
-  - https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md
-  - https://blog.heptio.com/on-securing-the-kubernetes-dashboard-16b09b1b7aca
+  - **Main doc:** https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/
+  - **Dashboard Access control:** https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/README.md
+  - **Dashboard auth Step-by-Step:** https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md
+  - 3rd Party:
+    - _[Long Read] On Securing the Kubernetes Dashboard:_ https://blog.heptio.com/on-securing-the-kubernetes-dashboard-16b09b1b7aca
 - Verify platform binaries before deploying
-  - https://github.com/kubernetes/kubernetes/releases
-  - sha256sum (https://help.ubuntu.com/community/HowToSHA256SUM)
+  - **K8s Releases (with SHA checksums):** https://github.com/kubernetes/kubernetes/releases
+  - 3rd Party:
+    - _sha256sum_ (https://help.ubuntu.com/community/HowToSHA256SUM)
 
 ## Cluster Hardening – 15%
 
+> **Main doc (and beyond):** https://kubernetes.io/docs/reference/access-authn-authz/
+
 - Restrict access to Kubernetes API
-  - https://kubernetes.io/docs/reference/access-authn-authz/controlling-access/
-  - <mark>Restrict access to API via NP: https://medium.com/@tufin/protecting-your-kubernetes-api-server-5eefeea4cf8a</mark>
-  - (mentioned, but gust a general precautions) https://cloud.google.com/anthos/gke/docs/on-prem/how-to/hardening-your-cluster
+  - **Main doc:** https://kubernetes.io/docs/reference/access-authn-authz/controlling-access/
+  - 3rd Party:
+    - _Restrict access to API via NP:_ https://medium.com/@tufin/protecting-your-kubernetes-api-server-5eefeea4cf8a
 - Use Role Based Access Controls to minimize exposure
-  - https://kubernetes.io/docs/reference/access-authn-authz/rbac/
-  - <mark>https://github.com/David-VTUK/CKA-StudyGuide/blob/master/RevisionTopics/Part-5-Security.md</mark>
+  - **Main doc:** https://kubernetes.io/docs/reference/access-authn-authz/rbac/
+  - 3rd Party:
+    - _[Practice] RBAC, PSP, NP, TLS, etc._ https://github.com/David-VTUK/CKA-StudyGuide/blob/master/RevisionTopics/Part-5-Security.md
 - Exercise caution in using service accounts e.g. disable defaults, minimize permissions on newly created ones
-  - https://kubernetes.io/docs/reference/access-authn-authz/service-accounts-admin/
-  - https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/#use-the-default-service-account-to-access-the-api-server
-  - https://kubernetes.io/docs/reference/access-authn-authz/rbac/#default-roles-and-role-bindings
-  - [Understand Role Based Access Control in Kubernetes](https://www.youtube.com/watch?v=G3R24JSlGjY)
-  - https://kubernetes.io/docs/reference/access-authn-authz/authorization/#authorization-modules
-    - Other:
-    - Get SA token: https://docs.armory.io/docs/armory-admin/manual-service-account/
-    - https://thenewstack.io/a-practical-approach-to-understanding-kubernetes-authentication/ 
-    - https://thenewstack.io/kubernetes-access-control-exploring-service-accounts/ 
-    - https://www.cyberark.com/resources/threat-research-blog/securing-kubernetes-clusters-by-eliminating-risky-permissions
+  - **Main doc:** https://kubernetes.io/docs/reference/access-authn-authz/service-accounts-admin/
+  - **[Task] Service Account use:** https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/#use-the-default-service-account-to-access-the-api-server
+  - **Default Roles:** https://kubernetes.io/docs/reference/access-authn-authz/rbac/#default-roles-and-role-bindings
+  - **Auth Modules:** https://kubernetes.io/docs/reference/access-authn-authz/authorization/#authorization-modules
+  - 3rd Party:
+    - _[Youtube] Understand Role Based Access Control in Kubernetes_ https://www.youtube.com/watch?v=G3R24JSlGjY
+    - _Get SA token:_ https://docs.armory.io/docs/armory-admin/manual-service-account/
+    - _Blogpost series:_
+      - _[1/4] A Primer on Kubernetes Access Control_ https://thenewstack.io/a-primer-on-kubernetes-access-control/
+      - _[2/4] A Practical Approach to Understanding Kubernetes Authentication_ https://thenewstack.io/a-practical-approach-to-understanding-kubernetes-authentication/
+      - _[3/4] A Practical Approach to Understanding Kubernetes Authorization_ https://thenewstack.io/a-practical-approach-to-understanding-kubernetes-authorization/
+      - _[4/4] Kubernetes Access Control: Exploring Service Accounts_ https://thenewstack.io/kubernetes-access-control-exploring-service-accounts/
+    - _Securing Kubernetes Clusters by Eliminating Risky Permissions:_ https://www.cyberark.com/resources/threat-research-blog/securing-kubernetes-clusters-by-eliminating-risky-permissions
 - Update Kubernetes frequently
-  - https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade/
+  - **Main doc (kubeadm upgrade):** https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade/
 
 ## System Hardening – 15%
 
