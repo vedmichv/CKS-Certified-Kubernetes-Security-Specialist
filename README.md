@@ -79,7 +79,7 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
     - _[Practice] RBAC, PSP, NP, TLS, etc._ https://github.com/David-VTUK/CKA-StudyGuide/blob/master/RevisionTopics/Part-5-Security.md
 - Exercise caution in using service accounts e.g. disable defaults, minimize permissions on newly created ones
   - **Main doc:** https://kubernetes.io/docs/reference/access-authn-authz/service-accounts-admin/
-  - **[Task] Service Account use:** https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/#use-the-default-service-account-to-access-the-api-server
+  - **[Task] Service Account use (+automountServiceAccountToken):** https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/#use-the-default-service-account-to-access-the-api-server
   - **Default Roles:** https://kubernetes.io/docs/reference/access-authn-authz/rbac/#default-roles-and-role-bindings
   - **Auth Modules:** https://kubernetes.io/docs/reference/access-authn-authz/authorization/#authorization-modules
   - 3rd Party:
@@ -93,21 +93,25 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
     - _Securing Kubernetes Clusters by Eliminating Risky Permissions:_ https://www.cyberark.com/resources/threat-research-blog/securing-kubernetes-clusters-by-eliminating-risky-permissions
 - Update Kubernetes frequently
   - **Main doc (kubeadm upgrade):** https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade/
+  - **Reference (kubeadm upgrade):** https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm-upgrade/
 
 ## System Hardening – 15%
 
 - Minimize host OS footprint (reduce attack surface)
-  - https://blog.sonatype.com/kubesecops-kubernetes-security-practices-you-should-follow#:~:text=Reduce%20Kubernetes%20Attack%20Surfaces
-  - <mark>CIS Benchmark "CIS Distribution Independent Linux" (https://www.cisecurity.org/benchmark/distribution_independent_linux/)</mark>
+  - 3rd Party:
+    - _[Blogpost] Reduce Kubernetes Attack Surfaces_ https://blog.sonatype.com/kubesecops-kubernetes-security-practices-you-should-follow#:~:text=Reduce%20Kubernetes%20Attack%20Surfaces
+    - _CIS Benchmark "CIS Distribution Independent Linux"_ https://www.cisecurity.org/benchmark/distribution_independent_linux/
 - Minimize IAM roles
-  - **Grant least privilege**
+  - 3rd Party:
+    - [Common theory] Grant least privilege https://digitalguardian.com/blog/what-principle-least-privilege-polp-best-practice-information-security-and-compliance
 - Minimize external access to the network
-  - (Host-Level firewall **ufw (_uncomplicated firewall_)**) https://help.replicated.com/community/t/managing-firewalls-with-ufw-on-kubernetes/230
-  - <mark>**ufw** quick https://www.linode.com/docs/security/firewalls/configure-firewall-with-ufw/</mark>
-  - <mark>(**iptables** cheat sheet) https://gist.github.com/davydany/0ad377f6de3c70056d2bd0f1549e1017</mark>
+  - 3rd Party:
+    - _Host-Level firewall **ufw (_uncomplicated firewall_)**_ https://help.replicated.com/community/t/managing-firewalls-with-ufw-on-kubernetes/230
+    - _**ufw** quick-start_ https://www.linode.com/docs/security/firewalls/configure-firewall-with-ufw/
+    - _**iptables** cheat sheet_ https://gist.github.com/davydany/0ad377f6de3c70056d2bd0f1549e1017
 - Appropriately use kernel hardening tools such as AppArmor, seccomp
-  - https://kubernetes.io/docs/tutorials/clusters/apparmor/ 
-  - https://kubernetes.io/docs/tutorials/clusters/seccomp/	
+  - **Main doc (apparmor & k8s)** https://kubernetes.io/docs/tutorials/clusters/apparmor/ 
+  - **Main doc (seccomp & k8s)** https://kubernetes.io/docs/tutorials/clusters/seccomp/	
 
 ## Minimize Microservice Vulnerabilities – 20%
 
