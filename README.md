@@ -118,32 +118,41 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
 - Setup appropriate OS level security domains e.g. using PSP, OPA, security contexts
   - **PSP:** https://kubernetes.io/docs/concepts/policy/pod-security-policy/
   - **Security Context:** https://kubernetes.io/docs/tasks/configure-pod-container/security-context/
+  - **OPA (Blog):** https://kubernetes.io/blog/2019/08/06/opa-gatekeeper-policy-and-governance-for-kubernetes/
   - 3rd Party:
-    - **OPA (Blog):** https://kubernetes.io/blog/2019/08/06/opa-gatekeeper-policy-and-governance-for-kubernetes/
-    - **OPA:** https://www.openpolicyagent.org/docs/latest/kubernetes-primer/
+    - _[Youtube] Intro to OPA_ https://www.youtube.com/watch?v=Yup1FUc2Qn0
+    - _OPA:_ https://www.openpolicyagent.org/docs/latest/kubernetes-primer/
+    - _OPA Admission Controller_ https://www.openpolicyagent.org/docs/v0.12.2/kubernetes-admission-control/
 - Manage Kubernetes secrets
   - **Main doc:** https://kubernetes.io/docs/concepts/configuration/secret/
   - **Secret Encryption (etcd)** https://kubernetes.io/docs/tasks/administer-cluster/encrypt-data/
   - 3rd Party:
     - _Kubernetes-Secrets-Store-CSI-Driver_ (used by 3rd-party secret stores such as Vault, KeyVault etc.) https://github.com/kubernetes-sigs/secrets-store-csi-driver
     - _Bitnami Sealed Secrets_ https://github.com/bitnami-labs/sealed-secrets
-    - Demo for Vault integration: https://www.youtube.com/watch?v=IznsHhKL428&ab_channel=VMwareCloudNativeApps
+    - _Using secrets (Vault, Sealed), overview_ https://www.weave.works/blog/managing-secrets-in-kubernetes
+    - _Demo for Vault integration:_ https://www.youtube.com/watch?v=IznsHhKL428&ab_channel=VMwareCloudNativeApps
 - Use container runtime sandboxes in multi-tenant environments (e.g. gvisor, kata containers)
   - 3rd Party:
     - _kata containers_ https://katacontainers.io/
-    - _gvisor_ https://github.com/google/gvisor
+      - _Kata Containers, Docker and Kubernetes: How They All Fit Together_ https://platform9.com/blog/kata-containers-docker-and-kubernetes-how-they-all-fit-together/
+      - _How to use Kata Containers and CRI (containerd plugin) with Kubernetes_ https://github.com/kata-containers/documentation/blob/master/how-to/how-to-use-k8s-with-cri-containerd-and-kata.md
+    - _gVisor_ https://gvisor.dev/docs/
+      - _Step-by-Step gVisor_ https://thenewstack.io/how-to-implement-secure-containers-using-googles-gvisor/
 - Implement pod to pod encryption by use of mTLS
   - **Main doc:** https://kubernetes.io/docs/tasks/tls/managing-tls-in-a-cluster/
   - 3rd Party:
     - _Istio:_ https://istio.io/latest/docs/tasks/security/authentication/authn-policy/#auto-mutual-tls
     - _Istio:_ https://developer.ibm.com/technologies/containers/tutorials/istio-security-mtls/
     - _Istio:_ https://www.istioworkshop.io/11-security/01-mtls/
+    - _Mutual TLS Authentication (mTLS) De-Mystified_ https://codeburst.io/mutual-tls-authentication-mtls-de-mystified-11fa2a52e9cf
 
 ## Supply Chain Security – 20%
 
 - Minimize base image footprint
   - 3rd Party:
-    - _Best practices_ https://cloud.google.com/blog/products/gcp/7-best-practices-for-building-containers
+    - _[GCP] Kubernetes best practices: How and why to build small container images_ https://cloud.google.com/blog/products/gcp/kubernetes-best-practices-how-and-why-to-build-small-container-images
+    - _[GCP] Build the smallest image possible_ https://cloud.google.com/solutions/best-practices-for-building-containers#build-the-smallest-image-possible
+    - _[GCP] Best practices_ https://cloud.google.com/blog/products/gcp/7-best-practices-for-building-containers
     - _"Distroless" Docker Images_ https://github.com/GoogleContainerTools/distroless
     - https://hackernoon.com/tips-to-reduce-docker-image-sizes-876095da3b34
 - Secure your supply chain: whitelist allowed registries, sign and validate images
