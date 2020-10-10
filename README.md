@@ -160,6 +160,7 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
   - **One more link**: https://kubernetes.io/blog/2019/03/21/a-guide-to-kubernetes-admission-controllers/
   - 3rd Party:
     - _OPA registry restriction:_ https://www.openpolicyagent.org/docs/latest/kubernetes-primer/
+    - _Container Image Signatures in Kubernetes_ https://medium.com/sse-blog/container-image-signatures-in-kubernetes-19264ac5d8ce
     - _ImagePolicyWebhook (controller itself - custom):_ https://stackoverflow.com/questions/54463125/how-to-reject-docker-registries-in-kubernetes
       - _ImagePolicyWebhook controller example:_ https://github.com/flavio/kube-image-bouncer
     - _Docker content trust_ https://docs.docker.com/engine/security/trust/
@@ -168,9 +169,13 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
 - Use static analysis of user workloads (e.g.Kubernetes resources, Docker files)
   - 3rd Party:
     - _CNCF kubehunter_ https://github.com/aquasecurity/kube-hunter
+    - _[Online tool] kube-score_ https://kube-score.com/
+    - _Kubernetes static code analysis with Checkov_ https://bridgecrew.io/blog/kubernetes-static-code-analysis-with-checkov/
 - Scan images for known vulnerabilities
   - 3rd Party:
     - _clair_ https://github.com/quay/clair
+    - _clair Quick Start_ https://quay.github.io/clair/howto/getting_started.html
+    - _Scan Your Docker Images for Vulnerabilities_ https://medium.com/better-programming/scan-your-docker-images-for-vulnerabilities-81d37ae32cb3
 
 ## Monitoring, Logging and Runtime Security – 20%
 
@@ -178,15 +183,28 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
   - **Obsoleted** https://v1-16.docs.kubernetes.io/docs/tasks/debug-application-cluster/falco/
   - 3rd Party:
     - _Falco (CNCF):_ https://falco.org/
+      - https://sysdig.com/blog/how-to-detect-kubernetes-vulnerability-cve-2019-11246-using-falco/
+      - https://medium.com/@SkyscannerEng/kubernetes-security-monitoring-at-scale-with-sysdig-falco-a60cfdb0f67a
 - Detect threats within physical infrastructure, apps, networks, data, users and workloads
-  - ??
+  - 3rd Party:
+    - _Guidance on Kubernetes Threat Modeling_ https://www.trendmicro.com/vinfo/us/security/news/virtualization-and-cloud/guidance-on-kubernetes-threat-modeling
+    - _Threat matrix for Kubernetes_ https://www.microsoft.com/security/blog/2020/04/02/attack-matrix-kubernetes/
 - Detect all phases of attack regardless where it occurs and how it spreads
   - 3rd Party:
     - _Just a concept:_ https://www.dnvgl.com/article/the-seven-phases-of-a-cyber-attack-118270
+    - _Investigating Kubernetes Attack Scenarios in Threat Stack (part 1)_ https://www.threatstack.com/blog/kubernetes-attack-scenarios-part-1
+    - _Investigating Kubernetes Attack Scenarios in Threat Stack (part 2)_ https://www.threatstack.com/blog/investigating-kubernetes-attack-scenarios-in-threat-stack-part-2
+    - _Anatomy of a Kubernetes Attack - How Untrusted Docker Images Fail Us_ https://www.optiv.com/explore-optiv-insights/source-zero/anatomy-kubernetes-attack-how-untrusted-docker-images-fail-us
 - Perform deep analytical investigation and identification of bad actors within environment
-  - ??
+  - 3rd Party:
+    - _Kubernetes Security 101: Risks and 29 Best Practices_ https://www.stackrox.com/post/2020/05/kubernetes-security-101/
 - Ensure immutability of containers at runtime
-  - ??
+  - 3rd Party:
+    - _Why I think we should all use immutable Docker images_ https://medium.com/sroze/why-i-think-we-should-all-use-immutable-docker-images-9f4fdcb5212f
+    - _With immutable infrastructure, your systems can rise from the dead_ https://techbeacon.com/enterprise-it/immutable-infrastructure-your-systems-can-rise-dead
+    - _Leveraging Kubernetes and OpenShift to Ensure that Containers are Immutable_ https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux_atomic_host/7/html/container_security_guide/keeping_containers_fresh_and_updateable#leveraging_kubernetes_and_openshift_to_ensure_that_containers_are_immutable
 - Use Audit Logs to monitor access
   - **Main doc:** https://kubernetes.io/docs/tasks/debug-application-cluster/audit/
-
+  - 3rd Party:
+    - _[Datadog, Step-by-Step] How to monitor Kubernetes audit logs_ https://www.datadoghq.com/blog/monitor-kubernetes-audit-logs/
+    - _[Falco, Step-by-Step] Kubernetes Audit Logging_ https://docs.sysdig.com/en/kubernetes-audit-logging.html
