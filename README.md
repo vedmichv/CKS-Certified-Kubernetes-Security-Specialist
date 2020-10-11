@@ -66,20 +66,28 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
 - **General practice:** <https://kubernetes.io/docs/tasks/administer-cluster/securing-a-cluster/#restricting-network-access>
 - **Official blog post:** <https://kubernetes.io/blog/2017/10/enforcing-network-policies-in-kubernetes/>
 - **NetworkPolicy API object reference:** <https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/#networkpolicy-v1-networking-k8s-io>
-- 3rd Party:
+<details>
+  <summary>- 3rd Party:</summary>
+
   - _NP Examples:_ <https://github.com/ahmetb/kubernetes-network-policy-recipes>
   - _Good NP description with examples:_ <https://medium.com/@reuvenharrison/an-introduction-to-kubernetes-network-policies-for-security-people-ba92dd4c809d>
   - _NP best practices:_ <https://medium.com/@tufin/best-practices-for-kubernetes-network-policies-2b643c4b1aa>
   - _[Playground] Network Policy Visualizer_ <https://orca.tufin.io/netpol/>
+
+</details>
+
 - **Notes**:
   > podSelector: This selects particular Pods in the **same namespace as the NetworkPolicy** which should be allowed as ingress sources or egress destinations.
   
 ### Use CIS benchmark to review the security configuration of Kubernetes components (etcd, kubelet, kubedns, kubeapi)
+<details>
+  <summary>- 3rd Party:</summary>
 
-- 3rd Party:
   - _CIS Benchmark Kubernetes_ <https://www.cisecurity.org/benchmark/kubernetes/>
   - _kubebench (CNCF)_ <https://github.com/aquasecurity/kube-bench#running-kube-bench>
   - _Default GKE cluster results:_ <https://cloud.google.com/kubernetes-engine/docs/concepts/cis-benchmarks#status>
+
+</details>
 
 ### Properly set up Ingress objects with security control
 
