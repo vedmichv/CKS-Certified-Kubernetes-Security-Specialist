@@ -93,6 +93,7 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
 
 - **Main doc (TLS):** <https://github.com/kubernetes/ingress-nginx/blob/master/docs/user-guide/tls.md>
 - **Main Concept (ingress, TLS):** <https://kubernetes.io/docs/concepts/services-networking/ingress/#tls>
+- **How to deploy NGINX Ingress Controller:** <https://github.com/kubernetes/ingress-nginx/blob/master/docs/deploy/index.md>
 - **Main Concept (ingress controller, multiple controllers):** <https://kubernetes.io/docs/concepts/services-networking/ingress-controllers/>
 - **Create TLS secret:** <https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#-em-secret-tls-em->
 
