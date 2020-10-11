@@ -77,7 +77,7 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
 ### Use CIS benchmark to review the security configuration of Kubernetes components (etcd, kubelet, kubedns, kubeapi)
 
 - 3rd Party:
-  - _CIS Benchmark Kubernetes_
+  - _CIS Benchmark Kubernetes_ <https://www.cisecurity.org/benchmark/kubernetes/>
   - _kubebench (CNCF)_ <https://github.com/aquasecurity/kube-bench#running-kube-bench>
   - _Default GKE cluster results:_ <https://cloud.google.com/kubernetes-engine/docs/concepts/cis-benchmarks#status>
 
