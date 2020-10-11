@@ -20,25 +20,25 @@
 	- [System Hardening – 15%](#system-hardening--15)
 		- [Minimize host OS footprint (reduce attack surface)](#minimize-host-os-footprint-reduce-attack-surface)
 		- [Minimize IAM roles](#minimize-iam-roles)
-			- [Minimize external access to the network](#minimize-external-access-to-the-network)
-			- [Appropriately use kernel hardening tools such as AppArmor, seccomp](#appropriately-use-kernel-hardening-tools-such-as-apparmor-seccomp)
-		- [Minimize Microservice Vulnerabilities – 20%](#minimize-microservice-vulnerabilities--20)
-			- [Setup appropriate OS level security domains e.g. using PSP, OPA, security contexts](#setup-appropriate-os-level-security-domains-eg-using-psp-opa-security-contexts)
-			- [Manage Kubernetes secrets](#manage-kubernetes-secrets)
-			- [Use container runtime sandboxes in multi-tenant environments (e.g. gvisor, kata containers)](#use-container-runtime-sandboxes-in-multi-tenant-environments-eg-gvisor-kata-containers)
-			- [Implement pod to pod encryption by use of mTLS](#implement-pod-to-pod-encryption-by-use-of-mtls)
-		- [Supply Chain Security – 20%](#supply-chain-security--20)
-			- [Minimize base image footprint](#minimize-base-image-footprint)
-			- [Secure your supply chain: whitelist allowed registries, sign and validate images](#secure-your-supply-chain-whitelist-allowed-registries-sign-and-validate-images)
-			- [Use static analysis of user workloads (e.g.Kubernetes resources, Docker files)](#use-static-analysis-of-user-workloads-egkubernetes-resources-docker-files)
-			- [Scan images for known vulnerabilities](#scan-images-for-known-vulnerabilities)
-		- [Monitoring, Logging and Runtime Security – 20%](#monitoring-logging-and-runtime-security--20)
-			- [Perform behavioral analytics of syscall process and file activities at the host and container level to detect malicious activities](#perform-behavioral-analytics-of-syscall-process-and-file-activities-at-the-host-and-container-level-to-detect-malicious-activities)
-			- [Detect threats within physical infrastructure, apps, networks, data, users and workloads](#detect-threats-within-physical-infrastructure-apps-networks-data-users-and-workloads)
-			- [Detect all phases of attack regardless where it occurs and how it spreads](#detect-all-phases-of-attack-regardless-where-it-occurs-and-how-it-spreads)
-			- [Perform deep analytical investigation and identification of bad actors within environment](#perform-deep-analytical-investigation-and-identification-of-bad-actors-within-environment)
-			- [Ensure immutability of containers at runtime](#ensure-immutability-of-containers-at-runtime)
-			- [Use Audit Logs to monitor access](#use-audit-logs-to-monitor-access)
+		- [Minimize external access to the network](#minimize-external-access-to-the-network)
+		- [Appropriately use kernel hardening tools such as AppArmor, seccomp](#appropriately-use-kernel-hardening-tools-such-as-apparmor-seccomp)
+	- [Minimize Microservice Vulnerabilities – 20%](#minimize-microservice-vulnerabilities--20)
+		- [Setup appropriate OS level security domains e.g. using PSP, OPA, security contexts](#setup-appropriate-os-level-security-domains-eg-using-psp-opa-security-contexts)
+		- [Manage Kubernetes secrets](#manage-kubernetes-secrets)
+		- [Use container runtime sandboxes in multi-tenant environments (e.g. gvisor, kata containers)](#use-container-runtime-sandboxes-in-multi-tenant-environments-eg-gvisor-kata-containers)
+		- [Implement pod to pod encryption by use of mTLS](#implement-pod-to-pod-encryption-by-use-of-mtls)
+	- [Supply Chain Security – 20%](#supply-chain-security--20)
+		- [Minimize base image footprint](#minimize-base-image-footprint)
+		- [Secure your supply chain: whitelist allowed registries, sign and validate images](#secure-your-supply-chain-whitelist-allowed-registries-sign-and-validate-images)
+		- [Use static analysis of user workloads (e.g.Kubernetes resources, Docker files)](#use-static-analysis-of-user-workloads-egkubernetes-resources-docker-files)
+		- [Scan images for known vulnerabilities](#scan-images-for-known-vulnerabilities)
+	- [Monitoring, Logging and Runtime Security – 20%](#monitoring-logging-and-runtime-security--20)
+		- [Perform behavioral analytics of syscall process and file activities at the host and container level to detect malicious activities](#perform-behavioral-analytics-of-syscall-process-and-file-activities-at-the-host-and-container-level-to-detect-malicious-activities)
+		- [Detect threats within physical infrastructure, apps, networks, data, users and workloads](#detect-threats-within-physical-infrastructure-apps-networks-data-users-and-workloads)
+		- [Detect all phases of attack regardless where it occurs and how it spreads](#detect-all-phases-of-attack-regardless-where-it-occurs-and-how-it-spreads)
+		- [Perform deep analytical investigation and identification of bad actors within environment](#perform-deep-analytical-investigation-and-identification-of-bad-actors-within-environment)
+		- [Ensure immutability of containers at runtime](#ensure-immutability-of-containers-at-runtime)
+		- [Use Audit Logs to monitor access](#use-audit-logs-to-monitor-access)
 	- [Uncategorized and questions](#uncategorized-and-questions)
 
 ## Intro
@@ -146,7 +146,7 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
 - **[Task] Service Account use (+automountServiceAccountToken):** <https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/#use-the-default-service-account-to-access-the-api-server>
 - **Default Roles:** <https://kubernetes.io/docs/reference/access-authn-authz/rbac/#default-roles-and-role-bindings>
 - **Auth Modules:** <https://kubernetes.io/docs/reference/access-authn-authz/authorization/#authorization-modules>
-- <details><summary>3rd Party:</summary>
+- 3rd Party:
   - _[Youtube] Understand Role Based Access Control in Kubernetes_ <https://www.youtube.com/watch?v=G3R24JSlGjY>
   - _Get SA token:_ <https://docs.armory.io/docs/armory-admin/manual-service-account/>
   - _Blogpost series:_
@@ -155,7 +155,6 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
     - _[3/4] A Practical Approach to Understanding Kubernetes Authorization_ <https://thenewstack.io/a-practical-approach-to-understanding-kubernetes-authorization/>
     - _[4/4] Kubernetes Access Control: Exploring Service Accounts_ <https://thenewstack.io/kubernetes-access-control-exploring-service-accounts/>
   - _Securing Kubernetes Clusters by Eliminating Risky Permissions:_ <https://www.cyberark.com/resources/threat-research-blog/securing-kubernetes-clusters-by-eliminating-risky-permissions>
-  </details>
 
 ### Update Kubernetes frequently
 
@@ -176,7 +175,7 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
 - 3rd Party:
   - [Common theory] Grant least privilege <https://digitalguardian.com/blog/what-principle-least-privilege-polp-best-practice-information-security-and-compliance>
 
-#### Minimize external access to the network
+### Minimize external access to the network
 
 - **K8s quotas (restrict service.loadbalancer)** <https://kubernetes.io/docs/concepts/policy/resource-quotas/>
 - 3rd Party:
@@ -184,14 +183,14 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
   - _**ufw** quick-start_ <https://www.linode.com/docs/security/firewalls/configure-firewall-with-ufw/>
   - _**iptables** cheat sheet_ <https://gist.github.com/davydany/0ad377f6de3c70056d2bd0f1549e1017>
 
-#### Appropriately use kernel hardening tools such as AppArmor, seccomp
+### Appropriately use kernel hardening tools such as AppArmor, seccomp
 
 - **Main doc (apparmor & k8s)** <https://kubernetes.io/docs/tutorials/clusters/apparmor/>
 - **Main doc (seccomp & k8s)** <https://kubernetes.io/docs/tutorials/clusters/seccomp/>
 
-### Minimize Microservice Vulnerabilities – 20%
+## Minimize Microservice Vulnerabilities – 20%
 
-#### Setup appropriate OS level security domains e.g. using PSP, OPA, security contexts
+### Setup appropriate OS level security domains e.g. using PSP, OPA, security contexts
 
 - **PSP:** <https://kubernetes.io/docs/concepts/policy/pod-security-policy/>
 - **Security Context:** <https://kubernetes.io/docs/tasks/configure-pod-container/security-context/>
@@ -201,7 +200,7 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
   - _OPA:_ <https://www.openpolicyagent.org/docs/latest/kubernetes-primer/>
   - _OPA Admission Controller_ <https://www.openpolicyagent.org/docs/v0.12.2/kubernetes-admission-control/>
 
-#### Manage Kubernetes secrets
+### Manage Kubernetes secrets
 
 - **Main doc:** <https://kubernetes.io/docs/concepts/configuration/secret/>
 - **Secret Encryption (etcd)** <https://kubernetes.io/docs/tasks/administer-cluster/encrypt-data/>
@@ -211,7 +210,7 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
   - _Using secrets (Vault, Sealed), overview_ <https://www.weave.works/blog/managing-secrets-in-kubernetes>
   - _Demo for Vault integration:_ <https://www.youtube.com/watch?v=IznsHhKL428&ab_channel=VMwareCloudNativeApps>
 
-#### Use container runtime sandboxes in multi-tenant environments (e.g. gvisor, kata containers)
+### Use container runtime sandboxes in multi-tenant environments (e.g. gvisor, kata containers)
 
 - 3rd Party:
   - _kata containers_ <https://katacontainers.io/>
@@ -220,7 +219,7 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
   - _gVisor_ <https://gvisor.dev/docs/>
     - _Step-by-Step gVisor_ <https://thenewstack.io/how-to-implement-secure-containers-using-googles-gvisor/>
 
-#### Implement pod to pod encryption by use of mTLS
+### Implement pod to pod encryption by use of mTLS
 
 - **Main doc:** <https://kubernetes.io/docs/tasks/tls/managing-tls-in-a-cluster/>
 - 3rd Party:
@@ -229,9 +228,9 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
   - _Istio:_ <https://www.istioworkshop.io/11-security/01-mtls/>
   - _Mutual TLS Authentication (mTLS) De-Mystified_ <https://codeburst.io/mutual-tls-authentication-mtls-de-mystified-11fa2a52e9cf>
 
-### Supply Chain Security – 20%
+## Supply Chain Security – 20%
 
-#### Minimize base image footprint
+### Minimize base image footprint
 
 - 3rd Party:
   - _[GCP] Kubernetes best practices: How and why to build small container images_ <https://cloud.google.com/blog/products/gcp/kubernetes-best-practices-how-and-why-to-build-small-container-images>
@@ -240,7 +239,7 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
   - _"Distroless" Docker Images_ <https://github.com/GoogleContainerTools/distroless>
   - <https://hackernoon.com/tips-to-reduce-docker-image-sizes-876095da3b34>
 
-#### Secure your supply chain: whitelist allowed registries, sign and validate images
+### Secure your supply chain: whitelist allowed registries, sign and validate images
 
 - **Admission controllers** <https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/>
 - **One more link**: <https://kubernetes.io/blog/2019/03/21/a-guide-to-kubernetes-admission-controllers/>
@@ -253,23 +252,23 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
     - <https://docs.docker.com/engine/reference/commandline/trust_sign/>
     - <https://docs.docker.com/engine/reference/commandline/trust_inspect/>
 
-#### Use static analysis of user workloads (e.g.Kubernetes resources, Docker files)
+### Use static analysis of user workloads (e.g.Kubernetes resources, Docker files)
 
 - 3rd Party:
   - _CNCF kubehunter_ <https://github.com/aquasecurity/kube-hunter>
   - _[Online tool] kube-score_ <https://kube-score.com/>
   - _Kubernetes static code analysis with Checkov_ <https://bridgecrew.io/blog/kubernetes-static-code-analysis-with-checkov/>
 
-#### Scan images for known vulnerabilities
+### Scan images for known vulnerabilities
 
 - 3rd Party:
   - _clair_ <https://github.com/quay/clair>
   - _clair Quick Start_ <https://quay.github.io/clair/howto/getting_started.html>
   - _Scan Your Docker Images for Vulnerabilities_ <https://medium.com/better-programming/scan-your-docker-images-for-vulnerabilities-81d37ae32cb3>
 
-### Monitoring, Logging and Runtime Security – 20%
+## Monitoring, Logging and Runtime Security – 20%
 
-#### Perform behavioral analytics of syscall process and file activities at the host and container level to detect malicious activities
+### Perform behavioral analytics of syscall process and file activities at the host and container level to detect malicious activities
 
 - **Obsoleted** <https://v1-16.docs.kubernetes.io/docs/tasks/debug-application-cluster/falco/>
 - 3rd Party:
@@ -277,13 +276,13 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
     - <https://sysdig.com/blog/how-to-detect-kubernetes-vulnerability-cve-2019-11246-using-falco/>
     - <https://medium.com/@SkyscannerEng/kubernetes-security-monitoring-at-scale-with-sysdig-falco-a60cfdb0f67a>
 
-#### Detect threats within physical infrastructure, apps, networks, data, users and workloads
+### Detect threats within physical infrastructure, apps, networks, data, users and workloads
 
 - 3rd Party:
   - _Guidance on Kubernetes Threat Modeling_ <https://www.trendmicro.com/vinfo/us/security/news/virtualization-and-cloud/guidance-on-kubernetes-threat-modeling>
   - _Threat matrix for Kubernetes_ <https://www.microsoft.com/security/blog/2020/04/02/attack-matrix-kubernetes/>
 
-#### Detect all phases of attack regardless where it occurs and how it spreads
+### Detect all phases of attack regardless where it occurs and how it spreads
 
 - 3rd Party:
   - _Just a concept:_ <https://www.dnvgl.com/article/the-seven-phases-of-a-cyber-attack-118270>
@@ -291,19 +290,19 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
   - _Investigating Kubernetes Attack Scenarios in Threat Stack (part 2)_ <https://www.threatstack.com/blog/investigating-kubernetes-attack-scenarios-in-threat-stack-part-2>
   - _Anatomy of a Kubernetes Attack - How Untrusted Docker Images Fail Us_ <https://www.optiv.com/explore-optiv-insights/source-zero/anatomy-kubernetes-attack-how-untrusted-docker-images-fail-us>
 
-#### Perform deep analytical investigation and identification of bad actors within environment
+### Perform deep analytical investigation and identification of bad actors within environment
 
 - 3rd Party:
   - _Kubernetes Security 101: Risks and 29 Best Practices_ <https://www.stackrox.com/post/2020/05/kubernetes-security-101/>
 
-#### Ensure immutability of containers at runtime
+### Ensure immutability of containers at runtime
 
 - 3rd Party:
   - _Why I think we should all use immutable Docker images_ <https://medium.com/sroze/why-i-think-we-should-all-use-immutable-docker-images-9f4fdcb5212f>
   - _With immutable infrastructure, your systems can rise from the dead_ <https://techbeacon.com/enterprise-it/immutable-infrastructure-your-systems-can-rise-dead>
   - _Leveraging Kubernetes and OpenShift to Ensure that Containers are Immutable_ <https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux_atomic_host/7/html/container_security_guide/keeping_containers_fresh_and_updateable#leveraging_kubernetes_and_openshift_to_ensure_that_containers_are_immutable>
 
-#### Use Audit Logs to monitor access
+### Use Audit Logs to monitor access
 
 - **Main doc:** <https://kubernetes.io/docs/tasks/debug-application-cluster/audit/>
 - 3rd Party:
