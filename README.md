@@ -91,7 +91,10 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
 #### Protect node metadata and endpoints
 
 - **General:** <https://kubernetes.io/docs/tasks/administer-cluster/securing-a-cluster/#restricting-cloud-metadata-api-access>
+- **Kubelet authentication/authorization (access node info via kubelet API)** <https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet-authentication-authorization/>
+- **Set Kubelet parameters via a config file** <https://kubernetes.io/docs/tasks/administer-cluster/kubelet-config-file/>
 - 3rd Party:
+  - _Kubelet API_ <https://www.deepnetwork.com/blog/kubernetes/2020/01/13/kubelet-api.html>
   - _[Practical] Protecting metadata - **iptables rule**:_ <https://docs.aws.amazon.com/eks/latest/userguide/restrict-ec2-credential-access.html>
   - _GCP-specific metadata protection guide_ <https://cloud.google.com/kubernetes-engine/docs/how-to/protecting-cluster-metadata>
   - _Setting up secure endpoints in Kubernetes (might be not related):_ <https://blog.cloud66.com/setting-up-secure-endpoints-in-kubernetes/>
@@ -174,6 +177,7 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
 
 #### Minimize external access to the network
 
+- **K8s quotas (restrict service.loadbalancer)** <https://kubernetes.io/docs/concepts/policy/resource-quotas/>
 - 3rd Party:
   - _Host-Level firewall **ufw (_uncomplicated firewall_)**_ <https://help.replicated.com/community/t/managing-firewalls-with-ufw-on-kubernetes/230>
   - _**ufw** quick-start_ <https://www.linode.com/docs/security/firewalls/configure-firewall-with-ufw/>
@@ -308,3 +312,7 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
 ## Uncategorized and questions
 
 - Restrict _alpha_ and _beta_ features <https://kubernetes.io/docs/tasks/administer-cluster/securing-a-cluster/#restrict-access-to-alpha-or-beta-features> - [**Solution**](https://kubernetes.io/docs/reference/using-api/api-overview/#enabling-or-disabling)
+- _etcd ACL_ <https://www.programmersought.com/article/88121021471/>
+- _prevent using node selectors (via PodNodeSelector Admission Controller)_ <https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#podnodeselector>
+- *prevent kubelet from changing node labels (via NodeRestriction Admission Controller)* <https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#noderestriction>
+- *Using Node Authorization (kubelet permissions)* <https://kubernetes.io/docs/reference/access-authn-authz/node/>
