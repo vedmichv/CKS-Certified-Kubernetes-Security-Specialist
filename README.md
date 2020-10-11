@@ -1,45 +1,45 @@
 # CKS Exam Preparation
 
 - [CKS Exam Preparation](#cks-exam-preparation)
-  - [Intro](#intro)
-  - [Usefull courses](#usefull-courses)
-  - [General security-related docs](#general-security-related-docs)
-  - [Cirriclium Topics](#cirriclium-topics)
-    - [Cluster Setup – 10%](#cluster-setup--10)
-      - [Use Network security policies to restrict cluster level access](#use-network-security-policies-to-restrict-cluster-level-access)
-      - [Use CIS benchmark to review the security configuration of Kubernetes components (etcd, kubelet, kubedns, kubeapi)](#use-cis-benchmark-to-review-the-security-configuration-of-kubernetes-components-etcd-kubelet-kubedns-kubeapi)
-      - [Properly set up Ingress objects with security control](#properly-set-up-ingress-objects-with-security-control)
-      - [Protect node metadata and endpoints](#protect-node-metadata-and-endpoints)
-      - [Minimize use of, and access to, GUI elements](#minimize-use-of-and-access-to-gui-elements)
-      - [Verify platform binaries before deploying](#verify-platform-binaries-before-deploying)
-    - [Cluster Hardening – 15%](#cluster-hardening--15)
-      - [Restrict access to Kubernetes API](#restrict-access-to-kubernetes-api)
-      - [Use Role Based Access Controls to minimize exposure](#use-role-based-access-controls-to-minimize-exposure)
-      - [Exercise caution in using service accounts e.g. disable defaults, minimize permissions on newly created ones](#exercise-caution-in-using-service-accounts-eg-disable-defaults-minimize-permissions-on-newly-created-ones)
-      - [Update Kubernetes frequently](#update-kubernetes-frequently)
-    - [System Hardening – 15%](#system-hardening--15)
-      - [Minimize host OS footprint (reduce attack surface)](#minimize-host-os-footprint-reduce-attack-surface)
-      - [Minimize IAM roles](#minimize-iam-roles)
-      - [Minimize external access to the network](#minimize-external-access-to-the-network)
-      - [Appropriately use kernel hardening tools such as AppArmor, seccomp](#appropriately-use-kernel-hardening-tools-such-as-apparmor-seccomp)
-    - [Minimize Microservice Vulnerabilities – 20%](#minimize-microservice-vulnerabilities--20)
-      - [Setup appropriate OS level security domains e.g. using PSP, OPA, security contexts](#setup-appropriate-os-level-security-domains-eg-using-psp-opa-security-contexts)
-      - [Manage Kubernetes secrets](#manage-kubernetes-secrets)
-      - [Use container runtime sandboxes in multi-tenant environments (e.g. gvisor, kata containers)](#use-container-runtime-sandboxes-in-multi-tenant-environments-eg-gvisor-kata-containers)
-      - [Implement pod to pod encryption by use of mTLS](#implement-pod-to-pod-encryption-by-use-of-mtls)
-    - [Supply Chain Security – 20%](#supply-chain-security--20)
-      - [Minimize base image footprint](#minimize-base-image-footprint)
-      - [Secure your supply chain: whitelist allowed registries, sign and validate images](#secure-your-supply-chain-whitelist-allowed-registries-sign-and-validate-images)
-      - [Use static analysis of user workloads (e.g.Kubernetes resources, Docker files)](#use-static-analysis-of-user-workloads-egkubernetes-resources-docker-files)
-      - [Scan images for known vulnerabilities](#scan-images-for-known-vulnerabilities)
-    - [Monitoring, Logging and Runtime Security – 20%](#monitoring-logging-and-runtime-security--20)
-      - [Perform behavioral analytics of syscall process and file activities at the host and container level to detect malicious activities](#perform-behavioral-analytics-of-syscall-process-and-file-activities-at-the-host-and-container-level-to-detect-malicious-activities)
-      - [Detect threats within physical infrastructure, apps, networks, data, users and workloads](#detect-threats-within-physical-infrastructure-apps-networks-data-users-and-workloads)
-      - [Detect all phases of attack regardless where it occurs and how it spreads](#detect-all-phases-of-attack-regardless-where-it-occurs-and-how-it-spreads)
-      - [Perform deep analytical investigation and identification of bad actors within environment](#perform-deep-analytical-investigation-and-identification-of-bad-actors-within-environment)
-      - [Ensure immutability of containers at runtime](#ensure-immutability-of-containers-at-runtime)
-      - [Use Audit Logs to monitor access](#use-audit-logs-to-monitor-access)
-  - [Uncategorized and questions](#uncategorized-and-questions)
+	- [Intro](#intro)
+	- [Usefull courses](#usefull-courses)
+	- [General security-related docs](#general-security-related-docs)
+	- [Cirriclium Topics](#cirriclium-topics)
+	- [Cluster Setup – 10%](#cluster-setup--10)
+		- [Use Network security policies to restrict cluster level access](#use-network-security-policies-to-restrict-cluster-level-access)
+		- [Use CIS benchmark to review the security configuration of Kubernetes components (etcd, kubelet, kubedns, kubeapi)](#use-cis-benchmark-to-review-the-security-configuration-of-kubernetes-components-etcd-kubelet-kubedns-kubeapi)
+		- [Properly set up Ingress objects with security control](#properly-set-up-ingress-objects-with-security-control)
+		- [Protect node metadata and endpoints](#protect-node-metadata-and-endpoints)
+		- [Minimize use of, and access to, GUI elements](#minimize-use-of-and-access-to-gui-elements)
+		- [Verify platform binaries before deploying](#verify-platform-binaries-before-deploying)
+	- [Cluster Hardening – 15%](#cluster-hardening--15)
+		- [Restrict access to Kubernetes API](#restrict-access-to-kubernetes-api)
+		- [Use Role Based Access Controls to minimize exposure](#use-role-based-access-controls-to-minimize-exposure)
+		- [Exercise caution in using service accounts e.g. disable defaults, minimize permissions on newly created ones](#exercise-caution-in-using-service-accounts-eg-disable-defaults-minimize-permissions-on-newly-created-ones)
+		- [Update Kubernetes frequently](#update-kubernetes-frequently)
+	- [System Hardening – 15%](#system-hardening--15)
+		- [Minimize host OS footprint (reduce attack surface)](#minimize-host-os-footprint-reduce-attack-surface)
+		- [Minimize IAM roles](#minimize-iam-roles)
+			- [Minimize external access to the network](#minimize-external-access-to-the-network)
+			- [Appropriately use kernel hardening tools such as AppArmor, seccomp](#appropriately-use-kernel-hardening-tools-such-as-apparmor-seccomp)
+		- [Minimize Microservice Vulnerabilities – 20%](#minimize-microservice-vulnerabilities--20)
+			- [Setup appropriate OS level security domains e.g. using PSP, OPA, security contexts](#setup-appropriate-os-level-security-domains-eg-using-psp-opa-security-contexts)
+			- [Manage Kubernetes secrets](#manage-kubernetes-secrets)
+			- [Use container runtime sandboxes in multi-tenant environments (e.g. gvisor, kata containers)](#use-container-runtime-sandboxes-in-multi-tenant-environments-eg-gvisor-kata-containers)
+			- [Implement pod to pod encryption by use of mTLS](#implement-pod-to-pod-encryption-by-use-of-mtls)
+		- [Supply Chain Security – 20%](#supply-chain-security--20)
+			- [Minimize base image footprint](#minimize-base-image-footprint)
+			- [Secure your supply chain: whitelist allowed registries, sign and validate images](#secure-your-supply-chain-whitelist-allowed-registries-sign-and-validate-images)
+			- [Use static analysis of user workloads (e.g.Kubernetes resources, Docker files)](#use-static-analysis-of-user-workloads-egkubernetes-resources-docker-files)
+			- [Scan images for known vulnerabilities](#scan-images-for-known-vulnerabilities)
+		- [Monitoring, Logging and Runtime Security – 20%](#monitoring-logging-and-runtime-security--20)
+			- [Perform behavioral analytics of syscall process and file activities at the host and container level to detect malicious activities](#perform-behavioral-analytics-of-syscall-process-and-file-activities-at-the-host-and-container-level-to-detect-malicious-activities)
+			- [Detect threats within physical infrastructure, apps, networks, data, users and workloads](#detect-threats-within-physical-infrastructure-apps-networks-data-users-and-workloads)
+			- [Detect all phases of attack regardless where it occurs and how it spreads](#detect-all-phases-of-attack-regardless-where-it-occurs-and-how-it-spreads)
+			- [Perform deep analytical investigation and identification of bad actors within environment](#perform-deep-analytical-investigation-and-identification-of-bad-actors-within-environment)
+			- [Ensure immutability of containers at runtime](#ensure-immutability-of-containers-at-runtime)
+			- [Use Audit Logs to monitor access](#use-audit-logs-to-monitor-access)
+	- [Uncategorized and questions](#uncategorized-and-questions)
 
 ## Intro
 
@@ -55,11 +55,11 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
 - **[K8s Blog] 11 Ways (Not) to Get Hacked** <https://kubernetes.io/blog/2018/07/18/11-ways-not-to-get-hacked/>
 - _GCP (GKE) General security guide_ <https://cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster>
 
-# Cirriclium Topics
+## Cirriclium Topics
 
 ## Cluster Setup – 10%
 
-#### Use Network security policies to restrict cluster level access
+### Use Network security policies to restrict cluster level access
 
 - **Main doc:** <https://kubernetes.io/docs/concepts/services-networking/network-policies/>
 - **Main task:** <https://kubernetes.io/docs/tasks/administer-cluster/declare-network-policy/>
@@ -74,21 +74,21 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
 - **Notes**:
   > podSelector: This selects particular Pods in the **same namespace as the NetworkPolicy** which should be allowed as ingress sources or egress destinations.
   
-#### Use CIS benchmark to review the security configuration of Kubernetes components (etcd, kubelet, kubedns, kubeapi)
+### Use CIS benchmark to review the security configuration of Kubernetes components (etcd, kubelet, kubedns, kubeapi)
 
 - 3rd Party:
   - _CIS Benchmark Kubernetes_
   - _kubebench (CNCF)_ <https://github.com/aquasecurity/kube-bench#running-kube-bench>
   - _Default GKE cluster results:_ <https://cloud.google.com/kubernetes-engine/docs/concepts/cis-benchmarks#status>
 
-#### Properly set up Ingress objects with security control
+### Properly set up Ingress objects with security control
 
 - **Main doc (TLS):** <https://github.com/kubernetes/ingress-nginx/blob/master/docs/user-guide/tls.md>
 - **Main Concept (ingress, TLS):** <https://kubernetes.io/docs/concepts/services-networking/ingress/#tls>
 - **Main Concept (ingress controller, multiple controllers):** <https://kubernetes.io/docs/concepts/services-networking/ingress-controllers/>
 - **Create TLS secret:** <https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#-em-secret-tls-em->
 
-#### Protect node metadata and endpoints
+### Protect node metadata and endpoints
 
 - **General:** <https://kubernetes.io/docs/tasks/administer-cluster/securing-a-cluster/#restricting-cloud-metadata-api-access>
 - **Kubelet authentication/authorization (access node info via kubelet API)** <https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet-authentication-authorization/>
@@ -110,7 +110,7 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
   >       - 169.254.169.254/32
   > ```
 
-#### Minimize use of, and access to, GUI elements
+### Minimize use of, and access to, GUI elements
 
 - **Main doc:** <https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/>
 - **Dashboard Access control:** <https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/README.md>
@@ -118,35 +118,35 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
 - 3rd Party:
   - _[Long Read] On Securing the Kubernetes Dashboard:_ <https://blog.heptio.com/on-securing-the-kubernetes-dashboard-16b09b1b7aca>
 
-#### Verify platform binaries before deploying
+### Verify platform binaries before deploying
 
 - **K8s Releases (with SHA checksums):** <https://github.com/kubernetes/kubernetes/releases>
 - 3rd Party:
   - _sha256sum_ (<https://help.ubuntu.com/community/HowToSHA256SUM>)
 
-### Cluster Hardening – 15%
+## Cluster Hardening – 15%
 
 > **Main doc (and beyond):** <https://kubernetes.io/docs/reference/access-authn-authz/>
 
-#### Restrict access to Kubernetes API
+### Restrict access to Kubernetes API
 
 - **Main doc:** <https://kubernetes.io/docs/reference/access-authn-authz/controlling-access/>
 - 3rd Party:
   - _Restrict access to API via NP:_ <https://medium.com/@tufin/protecting-your-kubernetes-api-server-5eefeea4cf8a>
 
-#### Use Role Based Access Controls to minimize exposure
+### Use Role Based Access Controls to minimize exposure
 
 - **Main doc:** <https://kubernetes.io/docs/reference/access-authn-authz/rbac/>
 - 3rd Party:
   - _[Practice] RBAC, PSP, NP, TLS, etc._ <https://github.com/David-VTUK/CKA-StudyGuide/blob/master/RevisionTopics/Part-5-Security.md>
 
-#### Exercise caution in using service accounts e.g. disable defaults, minimize permissions on newly created ones
+### Exercise caution in using service accounts e.g. disable defaults, minimize permissions on newly created ones
 
 - **Main doc:** <https://kubernetes.io/docs/reference/access-authn-authz/service-accounts-admin/>
 - **[Task] Service Account use (+automountServiceAccountToken):** <https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/#use-the-default-service-account-to-access-the-api-server>
 - **Default Roles:** <https://kubernetes.io/docs/reference/access-authn-authz/rbac/#default-roles-and-role-bindings>
 - **Auth Modules:** <https://kubernetes.io/docs/reference/access-authn-authz/authorization/#authorization-modules>
-- 3rd Party:
+- <details><summary>3rd Party:</summary>
   - _[Youtube] Understand Role Based Access Control in Kubernetes_ <https://www.youtube.com/watch?v=G3R24JSlGjY>
   - _Get SA token:_ <https://docs.armory.io/docs/armory-admin/manual-service-account/>
   - _Blogpost series:_
@@ -155,22 +155,23 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
     - _[3/4] A Practical Approach to Understanding Kubernetes Authorization_ <https://thenewstack.io/a-practical-approach-to-understanding-kubernetes-authorization/>
     - _[4/4] Kubernetes Access Control: Exploring Service Accounts_ <https://thenewstack.io/kubernetes-access-control-exploring-service-accounts/>
   - _Securing Kubernetes Clusters by Eliminating Risky Permissions:_ <https://www.cyberark.com/resources/threat-research-blog/securing-kubernetes-clusters-by-eliminating-risky-permissions>
+  </details>
 
-#### Update Kubernetes frequently
+### Update Kubernetes frequently
 
 - **Main doc (kubeadm upgrade):** <https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade/>
 - **Reference (kubeadm upgrade):** <https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm-upgrade/>
 
 ## System Hardening – 15%
 
-#### Minimize host OS footprint (reduce attack surface)
+### Minimize host OS footprint (reduce attack surface)
 
 - **[K8s] Preventing containers from loading unwanted kernel modules** <https://kubernetes.io/docs/tasks/administer-cluster/securing-a-cluster/#preventing-containers-from-loading-unwanted-kernel-modules>
 - 3rd Party:
   - _[Blogpost] Reduce Kubernetes Attack Surfaces_ <https://blog.sonatype.com/kubesecops-kubernetes-security-practices-you-should-follow#:~:text=Reduce%20Kubernetes%20Attack%20Surfaces>
   - _CIS Benchmark "CIS Distribution Independent Linux"_ <https://www.cisecurity.org/benchmark/distribution_independent_linux/>
 
-#### Minimize IAM roles
+### Minimize IAM roles
 
 - 3rd Party:
   - [Common theory] Grant least privilege <https://digitalguardian.com/blog/what-principle-least-privilege-polp-best-practice-information-security-and-compliance>
