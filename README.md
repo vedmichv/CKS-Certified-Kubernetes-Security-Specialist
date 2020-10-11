@@ -55,9 +55,9 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
 - **[K8s Blog] 11 Ways (Not) to Get Hacked** <https://kubernetes.io/blog/2018/07/18/11-ways-not-to-get-hacked/>
 - _GCP (GKE) General security guide_ <https://cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster>
 
-## Cirriclium Topics
+# Cirriclium Topics
 
-### Cluster Setup – 10%
+## Cluster Setup – 10%
 
 #### Use Network security policies to restrict cluster level access
 
@@ -161,7 +161,7 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
 - **Main doc (kubeadm upgrade):** <https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade/>
 - **Reference (kubeadm upgrade):** <https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm-upgrade/>
 
-### System Hardening – 15%
+## System Hardening – 15%
 
 #### Minimize host OS footprint (reduce attack surface)
 
