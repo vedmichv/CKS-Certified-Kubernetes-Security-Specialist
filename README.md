@@ -131,6 +131,7 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
   <summary>3rd Party:</summary>
 
   - _[Long Read] On Securing the Kubernetes Dashboard:_ <https://blog.heptio.com/on-securing-the-kubernetes-dashboard-16b09b1b7aca>
+  
 </details>
 
 ### Verify platform binaries before deploying
@@ -140,6 +141,7 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
   <summary>3rd Party:</summary>
 
   - _sha256sum_ (<https://help.ubuntu.com/community/HowToSHA256SUM>)
+
 </details>
 
 ## Cluster Hardening – 15%
@@ -162,6 +164,7 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
   <summary>3rd Party:</summary>
 
   - _[Practice] RBAC, PSP, NP, TLS, etc._ <https://github.com/David-VTUK/CKA-StudyGuide/blob/master/RevisionTopics/Part-5-Security.md>
+
 </details>
 
 ### Exercise caution in using service accounts e.g. disable defaults, minimize permissions on newly created ones
@@ -181,6 +184,7 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
     - _[3/4] A Practical Approach to Understanding Kubernetes Authorization_ <https://thenewstack.io/a-practical-approach-to-understanding-kubernetes-authorization/>
     - _[4/4] Kubernetes Access Control: Exploring Service Accounts_ <https://thenewstack.io/kubernetes-access-control-exploring-service-accounts/>
   - _Securing Kubernetes Clusters by Eliminating Risky Permissions:_ <https://www.cyberark.com/resources/threat-research-blog/securing-kubernetes-clusters-by-eliminating-risky-permissions>
+
 </details>
 
 ### Update Kubernetes frequently
@@ -193,17 +197,22 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
 ### Minimize host OS footprint (reduce attack surface)
 
 - **[K8s] Preventing containers from loading unwanted kernel modules** <https://kubernetes.io/docs/tasks/administer-cluster/securing-a-cluster/#preventing-containers-from-loading-unwanted-kernel-modules>
+
 <details>
   <summary>3rd Party:</summary>
+
   - _[Blogpost] Reduce Kubernetes Attack Surfaces_ <https://blog.sonatype.com/kubesecops-kubernetes-security-practices-you-should-follow#:~:text=Reduce%20Kubernetes%20Attack%20Surfaces>
   - _CIS Benchmark "CIS Distribution Independent Linux"_ <https://www.cisecurity.org/benchmark/distribution_independent_linux/>
+
+</details>
 
 ### Minimize IAM roles
 
 <details>
   <summary>3rd Party:</summary>
 
-  - [Common theory] Grant least privilege <https://digitalguardian.com/blog/what-principle-least-privilege-polp-best-practice-information-security-and-compliance>
+  - _[Common theory] Grant least privilege_ <https://digitalguardian.com/blog/what-principle-least-privilege-polp-best-practice-information-security-and-compliance>
+
 </details>
 
 ### Minimize external access to the network
@@ -211,9 +220,12 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
 - **K8s quotas (restrict service.loadbalancer)** <https://kubernetes.io/docs/concepts/policy/resource-quotas/>
 <details>
   <summary>3rd Party:</summary>
+
   - _Host-Level firewall **ufw (_uncomplicated firewall_)**_ <https://help.replicated.com/community/t/managing-firewalls-with-ufw-on-kubernetes/230>
   - _**ufw** quick-start_ <https://www.linode.com/docs/security/firewalls/configure-firewall-with-ufw/>
   - _**iptables** cheat sheet_ <https://gist.github.com/davydany/0ad377f6de3c70056d2bd0f1549e1017>
+
+</details>
 
 ### Appropriately use kernel hardening tools such as AppArmor, seccomp
 
@@ -233,6 +245,7 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
   - _[Youtube] Intro to OPA_ <https://www.youtube.com/watch?v=Yup1FUc2Qn0>
   - _OPA:_ <https://www.openpolicyagent.org/docs/latest/kubernetes-primer/>
   - _OPA Admission Controller_ <https://www.openpolicyagent.org/docs/v0.12.2/kubernetes-admission-control/>
+
 </details>
 
 ### Manage Kubernetes secrets
@@ -246,6 +259,7 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
   - _Bitnami Sealed Secrets_ <https://github.com/bitnami-labs/sealed-secrets>
   - _Using secrets (Vault, Sealed), overview_ <https://www.weave.works/blog/managing-secrets-in-kubernetes>
   - _Demo for Vault integration:_ <https://www.youtube.com/watch?v=IznsHhKL428&ab_channel=VMwareCloudNativeApps>
+
 </details>
 
 ### Use container runtime sandboxes in multi-tenant environments (e.g. gvisor, kata containers)
@@ -258,6 +272,7 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
     - _How to use Kata Containers and CRI (containerd plugin) with Kubernetes_ <https://github.com/kata-containers/documentation/blob/master/how-to/how-to-use-k8s-with-cri-containerd-and-kata.md>
   - _gVisor_ <https://gvisor.dev/docs/>
     - _Step-by-Step gVisor_ <https://thenewstack.io/how-to-implement-secure-containers-using-googles-gvisor/>
+
 </details>
 
 ### Implement pod to pod encryption by use of mTLS
@@ -270,6 +285,7 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
   - _Istio:_ <https://developer.ibm.com/technologies/containers/tutorials/istio-security-mtls/>
   - _Istio:_ <https://www.istioworkshop.io/11-security/01-mtls/>
   - _Mutual TLS Authentication (mTLS) De-Mystified_ <https://codeburst.io/mutual-tls-authentication-mtls-de-mystified-11fa2a52e9cf>
+
 </details>
 
 ## Supply Chain Security – 20%
@@ -284,6 +300,7 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
   - _[GCP] Best practices_ <https://cloud.google.com/blog/products/gcp/7-best-practices-for-building-containers>
   - _"Distroless" Docker Images_ <https://github.com/GoogleContainerTools/distroless>
   - <https://hackernoon.com/tips-to-reduce-docker-image-sizes-876095da3b34>
+
 </details>
 
 ### Secure your supply chain: whitelist allowed registries, sign and validate images
@@ -300,6 +317,7 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
   - _Docker content trust_ <https://docs.docker.com/engine/security/trust/>
     - <https://docs.docker.com/engine/reference/commandline/trust_sign/>
     - <https://docs.docker.com/engine/reference/commandline/trust_inspect/>
+
 </details>
 
 ### Use static analysis of user workloads (e.g.Kubernetes resources, Docker files)
@@ -310,6 +328,7 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
   - _CNCF kubehunter_ <https://github.com/aquasecurity/kube-hunter>
   - _[Online tool] kube-score_ <https://kube-score.com/>
   - _Kubernetes static code analysis with Checkov_ <https://bridgecrew.io/blog/kubernetes-static-code-analysis-with-checkov/>
+
 </details>
 
 ### Scan images for known vulnerabilities
@@ -320,6 +339,7 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
   - _clair_ <https://github.com/quay/clair>
   - _clair Quick Start_ <https://quay.github.io/clair/howto/getting_started.html>
   - _Scan Your Docker Images for Vulnerabilities_ <https://medium.com/better-programming/scan-your-docker-images-for-vulnerabilities-81d37ae32cb3>
+
 </details>
 
 ## Monitoring, Logging and Runtime Security – 20%
@@ -333,6 +353,7 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
   - _Falco (CNCF):_ <https://falco.org/>
     - <https://sysdig.com/blog/how-to-detect-kubernetes-vulnerability-cve-2019-11246-using-falco/>
     - <https://medium.com/@SkyscannerEng/kubernetes-security-monitoring-at-scale-with-sysdig-falco-a60cfdb0f67a>
+
 </details>
 
 ### Detect threats within physical infrastructure, apps, networks, data, users and workloads
@@ -342,6 +363,7 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
 
   - _Guidance on Kubernetes Threat Modeling_ <https://www.trendmicro.com/vinfo/us/security/news/virtualization-and-cloud/guidance-on-kubernetes-threat-modeling>
   - _Threat matrix for Kubernetes_ <https://www.microsoft.com/security/blog/2020/04/02/attack-matrix-kubernetes/>
+
 </details>
 
 ### Detect all phases of attack regardless where it occurs and how it spreads
@@ -353,6 +375,7 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
   - _Investigating Kubernetes Attack Scenarios in Threat Stack (part 1)_ <https://www.threatstack.com/blog/kubernetes-attack-scenarios-part-1>
   - _Investigating Kubernetes Attack Scenarios in Threat Stack (part 2)_ <https://www.threatstack.com/blog/investigating-kubernetes-attack-scenarios-in-threat-stack-part-2>
   - _Anatomy of a Kubernetes Attack - How Untrusted Docker Images Fail Us_ <https://www.optiv.com/explore-optiv-insights/source-zero/anatomy-kubernetes-attack-how-untrusted-docker-images-fail-us>
+
 </details>
 
 ### Perform deep analytical investigation and identification of bad actors within environment
@@ -361,6 +384,7 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
   <summary>3rd Party:</summary>
 
   - _Kubernetes Security 101: Risks and 29 Best Practices_ <https://www.stackrox.com/post/2020/05/kubernetes-security-101/>
+
 </details>
 
 ### Ensure immutability of containers at runtime
@@ -371,6 +395,7 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
   - _Why I think we should all use immutable Docker images_ <https://medium.com/sroze/why-i-think-we-should-all-use-immutable-docker-images-9f4fdcb5212f>
   - _With immutable infrastructure, your systems can rise from the dead_ <https://techbeacon.com/enterprise-it/immutable-infrastructure-your-systems-can-rise-dead>
   - _Leveraging Kubernetes and OpenShift to Ensure that Containers are Immutable_ <https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux_atomic_host/7/html/container_security_guide/keeping_containers_fresh_and_updateable#leveraging_kubernetes_and_openshift_to_ensure_that_containers_are_immutable>
+
 </details>
 
 ### Use Audit Logs to monitor access
@@ -381,6 +406,7 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
 
   - _[Datadog, Step-by-Step] How to monitor Kubernetes audit logs_ <https://www.datadoghq.com/blog/monitor-kubernetes-audit-logs/>
   - _[Falco, Step-by-Step] Kubernetes Audit Logging_ <https://docs.sysdig.com/en/kubernetes-audit-logging.html>
+
 </details>
 
 ## Uncategorized and questions
