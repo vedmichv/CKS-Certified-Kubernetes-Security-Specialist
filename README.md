@@ -330,6 +330,7 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
 
 <details>
   <summary>3rd Party:</summary>
+
   - _kubesec_ <https://kubesec.io/>
   - _CNCF kubehunter_ <https://github.com/aquasecurity/kube-hunter>
   - _[Online tool] kube-score_ <https://kube-score.com/>
