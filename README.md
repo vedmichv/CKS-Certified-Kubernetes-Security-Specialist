@@ -54,6 +54,7 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
 
 - **[K8s Blog] 11 Ways (Not) to Get Hacked** <https://kubernetes.io/blog/2018/07/18/11-ways-not-to-get-hacked/>
 - _GCP (GKE) General security guide_ <https://cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster>
+- _GCP (GKE) General security overview_ <https://cloud.google.com/kubernetes-engine/docs/concepts/security-overview>
 
 ## Cirriclium Topics
 
@@ -70,6 +71,7 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
   <summary>3rd Party:</summary>
 
   - _NP Examples:_ <https://github.com/ahmetb/kubernetes-network-policy-recipes>
+  - _Anthos security blueprint: Restricting traffic - example approaches and implementation steps_ <https://github.com/GoogleCloudPlatform/anthos-security-blueprints/tree/master/restricting-traffic>
   - _Good NP description with examples:_ <https://medium.com/@reuvenharrison/an-introduction-to-kubernetes-network-policies-for-security-people-ba92dd4c809d>
   - _NP best practices:_ <https://medium.com/@tufin/best-practices-for-kubernetes-network-policies-2b643c4b1aa>
   - _[Playground] Network Policy Visualizer_ <https://orca.tufin.io/netpol/>
@@ -212,6 +214,7 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
 <details>
   <summary>3rd Party:</summary>
 
+  - _[Wiki] Principle of least privilege_ <https://en.wikipedia.org/wiki/Principle_of_least_privilege>
   - _[Common theory] Grant least privilege_ <https://digitalguardian.com/blog/what-principle-least-privilege-polp-best-practice-information-security-and-compliance>
 
 </details>
@@ -254,6 +257,7 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
 
 - **Main doc:** <https://kubernetes.io/docs/concepts/configuration/secret/>
 - **Secret Encryption (etcd)** <https://kubernetes.io/docs/tasks/administer-cluster/encrypt-data/>
+- **Secret Encryption (KMS Provider)** <https://kubernetes.io/docs/tasks/administer-cluster/kms-provider/>
 <details>
   <summary>3rd Party:</summary>
 
