@@ -150,6 +150,11 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
 ## Cluster Hardening – 15%
 
 > **Main doc (and beyond):** <https://kubernetes.io/docs/reference/access-authn-authz/>
+<details>
+  <summary>3rd Party:</summary>
+
+  - _Kubernetes RBAC and TLS certificates – Kubernetes security guide (part 1)._ <https://sysdig.com/blog/kubernetes-security-rbac-tls/>
+</details>
 
 ### Restrict access to Kubernetes API
 
@@ -223,6 +228,7 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
 
 - **K8s quotas (restrict service.loadbalancer)** <https://kubernetes.io/docs/concepts/policy/resource-quotas/>
 - **Admission control plugin: ResourceQuota** <https://github.com/kubernetes/community/blob/master/contributors/design-proposals/resource-management/admission_control_resource_quota.md>
+- **Restrict Access For LoadBalancer Service** <https://v1-17.docs.kubernetes.io/docs/tasks/access-application-cluster/configure-cloud-provider-firewall/#restrict-access-for-loadbalancer-service>
 <details>
   <summary>3rd Party:</summary>
 
@@ -248,6 +254,7 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
   <summary>3rd Party:</summary>
 
   - _[Youtube] Intro to OPA_ <https://www.youtube.com/watch?v=Yup1FUc2Qn0>
+  - _Kubernetes security context, security policy, and network policy – Kubernetes security guide (part 2)._ <https://sysdig.com/blog/kubernetes-security-psp-network-policy/>
   - _OPA:_ <https://www.openpolicyagent.org/docs/latest/kubernetes-primer/>
   - _OPA Admission Controller_ <https://www.openpolicyagent.org/docs/v0.12.2/kubernetes-admission-control/>
 
@@ -270,9 +277,12 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
 
 ### Use container runtime sandboxes in multi-tenant environments (e.g. gvisor, kata containers)
 
+- **You can then use policies to enforce tenant isolation (Limit Ranges, Quotas, PSPs)** <https://kubernetes.io/docs/concepts/policy/>
+- **You can use Pod anti-affinity to prevent Pods from different tenants from being scheduled on the same node.** <https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#affinity-and-anti-affinity>
 <details>
   <summary>3rd Party:</summary>
 
+  - _[GKE] Cluster multi-tenancy_ <https://cloud.google.com/kubernetes-engine/docs/concepts/multitenancy-overview>
   - _kata containers_ <https://katacontainers.io/>
     - _Kata Containers, Docker and Kubernetes: How They All Fit Together_ <https://platform9.com/blog/kata-containers-docker-and-kubernetes-how-they-all-fit-together/>
     - _How to use Kata Containers and CRI (containerd plugin) with Kubernetes_ <https://github.com/kata-containers/documentation/blob/master/how-to/how-to-use-k8s-with-cri-containerd-and-kata.md>
@@ -423,3 +433,5 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
 - _prevent using node selectors (via PodNodeSelector Admission Controller)_ <https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#podnodeselector>
 - *prevent kubelet from changing node labels (via NodeRestriction Admission Controller)* <https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#noderestriction>
 - *Using Node Authorization (kubelet permissions)* <https://kubernetes.io/docs/reference/access-authn-authz/node/>
+- **Multiple schedulers** <https://kubernetes.io/docs/tasks/extend-kubernetes/configure-multiple-schedulers/>
+- **Konnectivity** <https://kubernetes.io/docs/tasks/extend-kubernetes/setup-konnectivity/>
