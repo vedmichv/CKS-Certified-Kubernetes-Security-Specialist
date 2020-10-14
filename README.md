@@ -436,3 +436,8 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
 - *Using Node Authorization (kubelet permissions)* <https://kubernetes.io/docs/reference/access-authn-authz/node/>
 - **Multiple schedulers** <https://kubernetes.io/docs/tasks/extend-kubernetes/configure-multiple-schedulers/>
 - **Konnectivity** <https://kubernetes.io/docs/tasks/extend-kubernetes/setup-konnectivity/>
+
+## Related links
+
+- https://k21academy.com/docker-kubernetes/certified-kubernetes-security-specialist-cks-step-by-step-activity-guide-hands-on-lab/#
+- https://deploy.live/blog/cks-certified-kubernetes-security-specialist-exam-preparation-guide/
