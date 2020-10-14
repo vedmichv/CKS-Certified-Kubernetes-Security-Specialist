@@ -321,7 +321,7 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
 
 ### Secure your supply chain: whitelist allowed registries, sign and validate images
 
-- **Admission controllers** <https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/>
+- **Admission controllers** <https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#imagepolicywebhook>
 - **One more link**: <https://kubernetes.io/blog/2019/03/21/a-guide-to-kubernetes-admission-controllers/>
 <details>
   <summary>3rd Party:</summary>
