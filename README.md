@@ -405,7 +405,8 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
 </details>
 
 ### Ensure immutability of containers at runtime
-
+- **"ReadOnlyRootFilesystem" (securityContext, PSP)** <https://kubernetes.io/docs/concepts/policy/pod-security-policy/#volumes-and-file-systems>
+- **"readOnly" volume mount** <https://kubernetes.io/docs/concepts/storage/volumes/>
 <details>
   <summary>3rd Party:</summary>
 
