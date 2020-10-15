@@ -162,6 +162,7 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
 
 - **Main doc:** <https://kubernetes.io/docs/reference/access-authn-authz/controlling-access/>
 - **Cleate "Normal User" (including certificate and its signing by API)** <https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requests/#normal-user>
+- **Different ways for creation certificates (easyrsa, openssl, cfssl )** <https://kubernetes.io/docs/concepts/cluster-administration/certificates/>
 <details>
   <summary>3rd Party:</summary>
 
