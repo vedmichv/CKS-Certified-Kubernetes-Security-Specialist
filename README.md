@@ -161,6 +161,7 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
 ### Restrict access to Kubernetes API
 
 - **Main doc:** <https://kubernetes.io/docs/reference/access-authn-authz/controlling-access/>
+- **Cleate "Normal User" (including certificate and its signing by API)** <https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requests/#normal-user>
 <details>
   <summary>3rd Party:</summary>
 
