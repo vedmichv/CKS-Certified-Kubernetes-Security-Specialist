@@ -276,6 +276,7 @@ In order to take the CKS exam, you must have **Valid CKA certification** to demo
   - _Bitnami Sealed Secrets_ <https://github.com/bitnami-labs/sealed-secrets>
   - _Using secrets (Vault, Sealed), overview_ <https://www.weave.works/blog/managing-secrets-in-kubernetes>
   - _Demo for Vault integration:_ <https://www.youtube.com/watch?v=IznsHhKL428&ab_channel=VMwareCloudNativeApps>
+  - _How to Manage Secrets in Kubernetes – A Complete Guide_ <https://spacelift.io/blog/kubernetes-secrets>
 
 </details>
 
